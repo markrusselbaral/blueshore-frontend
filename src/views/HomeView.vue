@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
+import HeartReact from '@/components/HeartReact.vue';
 </script>
 
 <template>
@@ -20,7 +21,8 @@ import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
         <img class="album-cover" src="@/assets/images/album.jpg" alt="album" />
         <div class="actions">
           <button class="like-button">
-            <HeartIcon class="heart-icon" />
+            <!-- <HeartIcon class="heart-icon" /> -->
+            <HeartReact />
           </button>
           <span>1000k</span>
           <button class="dislike-button">
@@ -40,7 +42,8 @@ import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
         <img class="album-cover" src="@/assets/images/album.jpg" alt="album" />
         <div class="actions">
           <button class="like-button">
-            <HeartIcon class="heart-icon" />
+            <!-- <HeartIcon class="heart-icon" /> -->
+            <HeartReact />
           </button>
           <span>1000k</span>
           <button class="dislike-button">
@@ -59,7 +62,8 @@ import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
         <img class="album-cover" src="@/assets/images/album.jpg" alt="album" />
         <div class="actions">
           <button class="like-button">
-            <HeartIcon class="heart-icon" />
+            <!-- <HeartIcon class="heart-icon" /> -->
+            <HeartReact />
           </button>
           <span>1000k</span>
           <button class="dislike-button">
@@ -78,7 +82,8 @@ import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
         <img class="album-cover" src="@/assets/images/album.jpg" alt="album" />
         <div class="actions">
           <button class="like-button">
-            <HeartIcon class="heart-icon" />
+            <!-- <HeartIcon class="heart-icon" /> -->
+            <HeartReact />
           </button>
           <span>1000k</span>
           <button class="dislike-button">
@@ -97,7 +102,8 @@ import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
         <img class="album-cover" src="@/assets/images/album.jpg" alt="album" />
         <div class="actions">
           <button class="like-button">
-            <HeartIcon class="heart-icon" />
+            <!-- <HeartIcon class="heart-icon" /> -->
+            <HeartReact />
           </button>
           <span>1000k</span>
           <button class="dislike-button">
@@ -116,7 +122,8 @@ import { HeartIcon, HandThumbDownIcon } from '@heroicons/vue/24/solid'
         <img class="album-cover" src="@/assets/images/album.jpg" alt="album" />
         <div class="actions">
           <button class="like-button">
-            <HeartIcon class="heart-icon" />
+            <!-- <HeartIcon class="heart-icon" /> -->
+            <HeartReact />
           </button>
           <span>1000k</span>
           <button class="dislike-button">
