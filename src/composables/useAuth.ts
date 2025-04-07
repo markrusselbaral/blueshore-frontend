@@ -20,14 +20,23 @@ export default function useAuth() {
   const error = ref<string | null>(null);
 
   // Check if user is already authenticated (you can check in localStorage or cookies)
-  const checkAuth = () => {
-    const token = localStorage.getItem('auth_token');
-    if (token) {
-      isAuthenticated.value = true;
-      // Fetch the user info if you have an endpoint to get the logged-in user details
-      getUserInfo(token);
+  const checkAuth = async () => {
+    try {
+      const token = localStorage.getItem('auth_token') as string | null;
+      const response = await axios.get<AuthResponse>('http://localhost:8000/api/user', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return true
+      user.value = response.data.user;
+    } catch (err) {
+      return false;
     }
   };
+
+  
+
 
   // Login
   const login = async (email: string, password: string) => {
@@ -39,8 +48,8 @@ export default function useAuth() {
       localStorage.setItem('auth_token', response.data.token); // Store token in localStorage
       user.value = response.data.user;
       isAuthenticated.value = true;
-    } catch (err) {
-      error.value = err instanceof Error ? err.message : 'Login failed';
+    } catch (err: any) {
+      error.value =  err.response.data.message
     } finally {
       isLoading.value = false;
     }
@@ -55,8 +64,9 @@ export default function useAuth() {
       localStorage.setItem('auth_token', response.data.token); // Store token in localStorage
       user.value = response.data.user;
       isAuthenticated.value = true;
-    } catch (err) {
-      error.value = err instanceof Error ? err.message : 'Register failed';
+    } catch (err: any) {
+      error.value =  err.response.data.message
+      console.log(err.response.data.errors)
     } finally {
       isLoading.value = false;
     }
